@@ -1,0 +1,24 @@
+let animal = {
+    name: "animal",
+    age: 10,
+    childs: ["child 1", "child 2"]
+   };
+   
+   let cat = clone(animal);
+   cat.name = "cat";
+   cat.age = 5;
+   cat.childs.push("child 3");
+   
+   console.log(cat.name, cat.age); // cat 5
+   console.log(cat.childs); // [ 'child 1', 'child 2', 'child 3' ]
+   
+   console.log(animal.name, animal.age); // cat 5
+   console.log(animal.childs); // [ 'child 1', 'child 2', 'child 3' ]
+   
+   function clone(obj) {
+    let copy = {} 
+    for(const [key,value] of Object.entries(obj)) 
+    [copy[key] =value ]
+    return copy;
+   
+   }
